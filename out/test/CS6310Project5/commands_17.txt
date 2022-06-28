@@ -1,0 +1,6 @@
+make_store,fresh_market,57000
+make_drone,fresh_market,1,50,2
+make_customer,carli2,Chanel,Cortez,666-666-6666,4,100
+start_order,fresh_market,ordA,1,carli2
+display_orders,fresh_market
+stop

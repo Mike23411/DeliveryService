@@ -1,0 +1,6 @@
+make_store,fresh_market,57000
+make_drone,fresh_market,3,100,6
+make_drone,fresh_market,1,50,2
+make_drone,fresh_market,2,75,3
+display_drones,fresh_market
+stop

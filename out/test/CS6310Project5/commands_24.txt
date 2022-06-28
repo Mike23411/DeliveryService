@@ -1,0 +1,6 @@
+make_store,fresh_market,57000
+sell_item,fresh_market,bacon,3
+sell_item,fresh_market,mushrooms,3
+sell_item,fresh_market,lamb,6
+display_items,fresh_market
+stop
