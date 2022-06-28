@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql
+    command:
+      - '--secure-file-priv=/var/lib/mysql'
+    ports:
+      - 33061:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: someuser
+      MYSQL_PASSWORD: Password1!
+      MYSQL_DATABASE: DeliveryService
+    volumes:
+      - .docker/DeliveryService.sql:/docker-entrypoint-initdb.d/DeliveryService.sql
+      - ./db_data:/var/lib/mysql
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+      - "6000:6000"
+#volumes:
+#  db_data:

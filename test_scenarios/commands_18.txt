@@ -1,0 +1,8 @@
+make_store,fresh_market,57000
+sell_item,fresh_market,bacon,3
+make_drone,fresh_market,1,50,2
+make_customer,carli2,Chanel,Cortez,666-666-6666,4,100
+start_order,fresh_market,ordA,1,carli2
+request_item,fresh_market,ordA,bacon,3,5
+display_orders,fresh_market
+stop
