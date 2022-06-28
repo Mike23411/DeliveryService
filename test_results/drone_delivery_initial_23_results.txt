@@ -1,0 +1,17 @@
+Welcome to the Grocery Express Delivery Service!
+> make_store,fresh_market,57000
+OK:change_completed
+> sell_item,fresh_market,bacon,3
+OK:change_completed
+> sell_item,fresh_market,lamb,6
+OK:change_completed
+> sell_item,fresh_market,mushrooms,3
+OK:change_completed
+> display_items,fresh_market
+bacon,3
+lamb,6
+mushrooms,3
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

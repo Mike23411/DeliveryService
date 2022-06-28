@@ -1,0 +1,118 @@
+Welcome to the Grocery Express Delivery Service!
+> make_store,target,10000
+OK:change_completed
+> make_store,walmart,20000
+OK:change_completed
+> make_store,costco,30000
+OK:change_completed
+> make_store,walmart,1000
+ERROR:store_identifier_already_exists
+> display_stores
+name:costco,revenue:30000
+name:target,revenue:10000
+name:walmart,revenue:20000
+OK:display_completed
+> sell_item,costco,raisins,8
+OK:change_completed
+> sell_item,costco,chips,10
+OK:change_completed
+> sell_item,walmart,water,5
+OK:change_completed
+> sell_item,target,snickers,6
+OK:change_completed
+> sell_item,costco,chips,12
+ERROR:item_identifier_already_exists
+> sell_item,kroger,cheese,2
+ERROR:store_identifier_does_not_exist
+> display_items,kroger
+ERROR:store_identifier_does_not_exist
+> display_items,costco
+raisins,8
+chips,10
+OK:display_completed
+> make_pilot,tan10,Tanner,Ten,100-000-0000,555-55-5555,transAtl_1,20
+OK:change_completed
+> make_pilot,pan20,Pan,Twenty,200-000-0000,777-77-7777,transAm_44,102
+OK:change_completed
+> make_pilot,panrpt20,Pan,Twenty_Rpt,200-000-0000,777-77-7777,transAm_44,90
+ERROR:pilot_license_already_exists
+> make_pilot,pan20,Pan,Twenty_Rpt,200-000-0000,777-77-7777,transAm_44,90
+ERROR:pilot_identifier_already_exists
+> display_pilots
+name:Tanner_Ten,phone:100-000-0000,taxID:555-55-5555,licenseID:transAtl_1,experience:20 name:Pan_Twenty,phone:200-000-0000,taxID:777-77-7777,licenseID:transAm_44,experience:102
+OK:display_completed
+> make_drone,kroger,1,40,1
+ERROR:store_identifier_does_not_exist
+> make_drone,costco,1,40,1
+OK:change_completed
+> make_drone,costco,1,40,1
+ERROR:drone_identifier_already_exists
+> make_drone,walmart,1,40,10
+OK:change_completed
+> make_drone,walmart,3,60,8
+OK:change_completed
+> make_drone,target,2,40,5
+OK:change_completed
+> display_drones,kroger
+ERROR:store_identifier_does_not_exist
+> fly_drone,walmart,1,tan10
+OK:change_completed
+> fly_drone,walmart,3,tan10
+
+> fly_drone,walmart,3,pan20
+OK:change_completed
+> display_drones,walmart
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:10,flown_by:Tanner_Ten droneID:3,total_cap:60,num_orders:0,remaining_cap:60,trips_left:8,flown_by:Pan_Twenty
+OK:display_completed
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> make_customer,aapple2,Ariana,Asparagus,333-333-3333,5,150
+ERROR:customer_identifier_already_exists
+> make_customer,ccherry4,Carlos,Cherry,444-444-4444,5,300
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100 name:Carlos_Cherry,phone:444-444-4444,rating:5,credit:300
+OK:display_completed
+> start_order,whole_foods,purchaseC,1,aapple2
+ERROR:store_identifier_does_not_exist
+> start_order,walmart,purchaseA,1,aapple2
+OK:change_completed
+> display_orders,walmart
+orderID:purchaseA
+OK:display_completed
+> display_orders,whole_foods
+ERROR:store_identifier_does_not_exist
+> request_item,whole_foods,purchaseA,cheesecake,1,10
+ERROR:store_identifier_does_not_exist
+> request_item,kroger,purchaseE,cheesecake,1,10
+ERROR:order_identifier_does_not_exist
+> request_item,walmart,purchaseA,water,4,3
+OK:change_completed
+> request_item,walmart,purchaseA,water,10,5
+ERROR:drone_cant_carry_new_item
+> display_orders,walmart
+orderID:purchaseA
+item_name:water,total_quantity:4,total_cost:12,total_weight:20
+OK:display_completed
+> purchase_order,walmart,purchaseA
+OK:change_completed
+> display_orders,kroger
+
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:88
+name:Carlos_Cherry,phone:444-444-4444,rating:5,credit:300
+OK:display_completed
+> display_stores
+name:costco,revenue:30000
+name:target,revenue:10000
+name:walmart,revenue:20012
+OK:display_completed
+> display_drones,walmart
+droneID:1,total_cap:40,num_orders:1,remaining_cap:28,trips_left:9,flown_by:Tanner_Ten droneID:3,total_cap:60,num_orders:0,remaining_cap:60,trips_left:8,flown_by:Pan_Twenty
+OK:display_completed
+> display_pilots
+name:Tanner_Ten,phone:100-000-0000,taxID:555-55-5555,licenseID:transAtl_1,experience:21 name:Pan_Twenty,phone:200-000-0000,taxID:777-77-7777,licenseID:transAm_44,experience:102
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated
